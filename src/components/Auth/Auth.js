@@ -80,7 +80,6 @@ function Auth() {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             if(data.authenticatedUser){
                 dispatch(loadingActions.stopLoading());
                 dispatch(userActions.login({

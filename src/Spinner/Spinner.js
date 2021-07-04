@@ -3,7 +3,7 @@ import styles from './Spinner.module.css';
 
 function Spinner() {
     return (
-        <div class={styles.loader}>Loading...</div>
+        <div className={styles.loader}>Loading...</div>
     )
 }
 
