@@ -55,19 +55,16 @@ function Auth() {
         dispatch(loadingActions.startloading());
         let authBody = null,authUrl = null;
         if(signIn){
-            authUrl = 'https://evening-stream-61734.herokuapp.com/signin';
+            authUrl = 'http://localhost:4000/auth/signin';
             authBody = {
                 email:email,
                 password:password
             }
         }else{
-            authUrl = 'https://evening-stream-61734.herokuapp.com/signup';
+            authUrl = 'http://localhost:4000/auth/signup';
             authBody = {
-                name:name,
-                surname:surname,
                 email:email,
-                password:password,
-                dob:new Date()
+                password:password
             }
         }
         
@@ -80,13 +77,12 @@ function Auth() {
         })
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             dispatch(loadingActions.stopLoading());
-            if(data.authenticatedUser){
+            if(data.success){
                 dispatch(userActions.login({
-                    token:data.id,
-                    name:'Sahil',
-                    surname:'Sawant',
-                    email:'sahil.sawant3@spit.ac.in'
+                    token:data.authToken,
+                    email:email,             
                 }))
                 history.replace('/');
             }else{

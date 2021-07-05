@@ -26,11 +26,11 @@ function AuthForm(props) {
                     <div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputName" className="form-label">Name</label>
-                            <input value={props.name} onChange={props.nameChangeHandler} type="email" className="form-control" id="exampleInputEmail1" required />
+                            <input value={props.name} onChange={props.nameChangeHandler} type="text" className="form-control" id="exampleInputEmail1" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputSurname" className="form-label">Surname</label>
-                            <input value={props.surname} onChange={props.surnameChangeHandler} type="email" className="form-control" id="exampleInputEmail1" required />
+                            <input value={props.surname} onChange={props.surnameChangeHandler} type="text" className="form-control" id="exampleInputEmail1" required />
                         </div>
                     </div>
                 }
